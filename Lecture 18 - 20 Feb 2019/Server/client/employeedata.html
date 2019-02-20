@@ -1,0 +1,13 @@
+<script>
+    fetch('/showallinfo')
+    .then((response) => {
+        response.json().then(items => {
+            items.forEach((items) => {
+                document.getElementById('container').innerHTML += 
+                items.firstName + ' ' + items.lastName + '</br>'
+            })
+        })
+    })
+
+</script>
+<div id='container'></div>
