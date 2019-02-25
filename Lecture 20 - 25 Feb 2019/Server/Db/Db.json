@@ -1,0 +1,8 @@
+[
+    {
+        "username" : "johndoe",
+        "password" : "1234",
+        "address" : "baker street london",
+        "isLogin" : false
+    }
+]
