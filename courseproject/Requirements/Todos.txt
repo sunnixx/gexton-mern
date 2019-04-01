@@ -1,0 +1,5 @@
+1st - Apr - 2019
+- Directory Structure (done)
+- Models (done)
+- React Router setup (done)
+- Home page structure design
