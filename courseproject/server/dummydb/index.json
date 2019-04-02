@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Shirt",
+        "price" : "800",
+        "pic" : "https://via.placeholder.com/200"
+    },{
+        "name" : "Pants",
+        "price" : "2000",
+        "pic" : "https://via.placeholder.com/200"
+    },{
+        "name" : "Jackets",
+        "price" : "3500",
+        "pic" : "https://via.placeholder.com/200"
+    },{
+        "name" : "Shoes",
+        "price" : "1500",
+        "pic" : "https://via.placeholder.com/200"
+    },{
+        "name" : "T - Shirts",
+        "price" : "600",
+        "pic" : "https://via.placeholder.com/200"
+    },{
+        "name" : "Kurta",
+        "price" : "2000",
+        "pic" : "https://via.placeholder.com/200"
+    }
+]

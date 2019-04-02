@@ -3,3 +3,6 @@
 - Models (done)
 - React Router setup (done)
 - Home page structure design
+
+2nd - Apr - 2019
+- Home page structure design

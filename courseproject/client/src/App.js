@@ -21,36 +21,34 @@ class App extends Component {
 
   navigation() {
     return (
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-        </ul>
-      </nav>
+      <ul className="nav">
+        <li className="nav-item">
+          <Link className="nav-link active" to="/"><i className="fas fa-home"></i> Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login"><i className="fas fa-user"></i> Login</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signup">Signup</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/contact">Contact</Link>
+        </li>
+      </ul>
     )
   }
 
   render() {
     return (
       <Router>
+      {this.navigation()}
         <Switch>
-          {this.navigation()}
-          <Route exact to="/" component={Home} />
-          <Route to="/login" component={Login} />
-          <Route to="/signup" component={Signup} />
-          <Route to="/contact" component={Contact} />
-          <Route to="/account" component={Account} />
-          <Route to="/Products" component={Products} />
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/account" component={Account} />
+          <Route path="/Products" component={Products} />
         </Switch>
       </Router>
     )

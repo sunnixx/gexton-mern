@@ -1,8 +1,4 @@
-ul li {
-  display: inline-block;
-  padding: 10px;
-}
-
-ul li:hover {
-  background-color: #e3e3e3
+.jumbo-bg{
+  background-image: url('http://www.secondhandclotheskent.co.uk/wp-content/uploads/2014/08/slider1-700x350.jpg');
+  height: 100%
 }
