@@ -9,12 +9,18 @@ class Home extends Component {
         super(props)
 
         this.state = { products: [] }
+        this.handlePurchase = this.handlePurchase.bind(this)
     }
 
     componentDidMount() {
         api.dummy()
         this.setState({ products: JSON.parse(localStorage.products) })
     }
+
+    handlePurchase() {
+        //This method will be used to buy particular items
+    }
+
     render() {
         return (
             <div>
@@ -27,18 +33,27 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className="container">
-                {this.state.products.map(items => {
-                    return (
-                        <div className="card" style={{ width: "18rem",display:'inline-block', margin: '25px' }}>
-                            <img src={items.pic} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">{items.name}</h5>
-                                <p className="card-text">Rs. {items.price}</p>
-                                <a href="#" className="btn btn-primary">Buy Now</a>
+                    {this.state.products.map(items => {
+                        return (
+                            <div className="card col-md-4" style={{ width: "18rem", display: 'inline-block', margin: '20px' }}>
+                                <img src={items.pic} className="card-img-top" alt="..." />
+                                <div className="card-body">
+                                    <h5 className="card-title">{items.name}</h5>
+                                    <p className="card-text">Rs. {items.price}</p>
+                                    <button className="btn btn-primary" onClick={this.handlePurchase}>Buy Now!</button>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                    <div>
+                        <footer>
+                            <div style={{ backgroundColor: '#e3e3e3', height: '100%', width: '100%' }}>
+                                <center>
+                                    <p>Copyright &copy; All rights reserved</p>
+                                </center>
+                            </div>
+                        </footer>
+                    </div>
                 </div>
             </div>
         )
