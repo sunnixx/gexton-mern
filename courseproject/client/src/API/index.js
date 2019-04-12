@@ -50,6 +50,34 @@ app.signup = async function(username, password, email, cb) {
     })
 }
 
+app.verfiy = async function(cb) {
+    await fetch('http://localhost:5000/verify')
+    .then(response => {
+        response.json().then(message => {
+            if(!message.state) {
+                cb(message.state)
+            } else {
+                localStorage.user = message.user
+                cb(message.state)
+            }
+        })
+    })
+    .catch(err => {
+        if(err) throw new Error(err)
+    })
+}
+
+app.logout = async function(cb) {
+    await fetch('http://localhost:5000/logout')
+    .then(response => {
+        response.json().then(message => {
+            cb(message)
+        })
+    }).catch(err => {
+        if(err) throw new Error(err)
+    })
+}
+
 app.contact = async function(email, contact, subject, message,cb) {
     await fetch('http://localhost:5000/contact',{
         method: 'POST',

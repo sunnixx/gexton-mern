@@ -15,10 +15,14 @@ class Login extends Component {
 
     handleLogin() {
         app.login(this.state.email,this.state.password,(message) => {
-            if(message.state === false) {
-                this.setState({status: false,message: message.message})
+            if(!message.state) {
+                this.setState({message:message.message})
             } else {
-                this.setState({status: true})
+                localStorage.user = JSON.stringify({
+                    username: message.username,
+                    email: message.email
+                })
+                this.setState({status:true})
             }
         })
     }
@@ -27,7 +31,7 @@ class Login extends Component {
         return (
             <div className="container">
                     <h1>Login Form</h1>
-                    {this.state.status === false ? <div className="alert alert-danger" role="alert">{this.state.message}</div> : <Redirect to="/" />}
+                    {this.state.status === false ? <div className="alert alert-danger" role="alert">{this.state.message}</div> : <Redirect to="/account" />}
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-group">
