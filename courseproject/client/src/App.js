@@ -48,7 +48,7 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/contact" component={Contact} />
           <Route path="/account" component={Account} />
-          <Route path="/Products" component={Products} />
+          <Route path="/product" component={Products} />
         </Switch>
       </Router>
     )

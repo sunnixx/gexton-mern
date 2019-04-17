@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import api from '../API';
 import '../App.css';
@@ -9,6 +10,7 @@ class Home extends Component {
         super(props)
 
         this.state = { products: [] }
+        this.id = "" //Class variable
         this.handlePurchase = this.handlePurchase.bind(this)
     }
 
@@ -17,13 +19,19 @@ class Home extends Component {
         this.setState({ products: JSON.parse(localStorage.products) })
     }
 
-    handlePurchase() {
-        //This method will be used to buy particular items
+    handlePurchase(id) {
+        this.id = id
+        this.setState({}) //This is only to call render() method again
+    }
+
+    componentWillUnmount() {
+        this.id=""
     }
 
     render() {
         return (
             <div>
+                {this.id !== "" ? <Redirect to={`/product?id=${this.id}`} /> : ""}
                 <div className="jumbotron jumbotron-fluid jumbo-bg">
                     <div className="container">
                         {/* <div className="jumbo-bg"> */}
@@ -40,7 +48,9 @@ class Home extends Component {
                                 <div className="card-body">
                                     <h5 className="card-title">{items.name}</h5>
                                     <p className="card-text">Rs. {items.price}</p>
-                                    <button className="btn btn-primary" onClick={this.handlePurchase}>Buy Now!</button>
+                                    <button className="btn btn-primary" onClick={() => this.handlePurchase(items.id)}>
+                                        Buy Now!
+                                    </button>
                                 </div>
                             </div>
                         )

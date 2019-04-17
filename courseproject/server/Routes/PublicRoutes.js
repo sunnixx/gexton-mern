@@ -16,6 +16,16 @@ route.get('/verify',(req,res,done) => {
     console.log(req.user)
 })
 
+route.post('/product',(req,res,done) => {
+    let id = req.body.id;
+
+    db.forEach((item) => {
+        if(item.id == id) {
+            return res.json({item})
+        }
+    })
+})
+
 route.post('/logout',(req,res,done) => {
     req.logout()
     res.json({

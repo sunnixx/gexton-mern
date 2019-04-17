@@ -9,6 +9,24 @@ app.dummy = async function() {
     })
 }
 
+app.product = async function(id,cb) {
+    await fetch('http://localhost:5000/product',{
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({id})
+    })
+    .then(response => {
+        response.json().then(message => {
+            cb(message)
+        })
+    })
+    .catch(err => {
+        throw new Error(err)
+    }) 
+}
+
 app.login = async function(email, password, cb) {
     await fetch('http://localhost:5000/login',{
         method: 'POST',

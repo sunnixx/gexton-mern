@@ -1,27 +1,39 @@
 [
     {
+        "id": "001",
         "name" : "Shirt",
         "price" : "800",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     },{
+        "id": "002",
         "name" : "Pants",
         "price" : "2000",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     },{
+        "id": "003",
         "name" : "Jackets",
         "price" : "3500",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     },{
+        "id": "004",
         "name" : "Shoes",
         "price" : "1500",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     },{
+        "id": "005",
         "name" : "T - Shirts",
         "price" : "600",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     },{
+        "id": "006",
         "name" : "Kurta",
         "price" : "2000",
-        "pic" : "https://via.placeholder.com/200"
+        "pic" : "https://via.placeholder.com/200",
+        "desc" : "very very good very cheap item"
     }
 ]
