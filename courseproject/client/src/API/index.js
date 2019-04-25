@@ -119,4 +119,29 @@ app.contact = async function(email, contact, subject, message,cb) {
     })
 }
 
+app.buy = async function(firstname,lastname,month,year,cvc,card,cb) {
+    fetch('http://localhost:5000/buy',{
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({
+            firstname,
+            lastname,
+            month,
+            year,
+            cvc,
+            card
+        })
+    })
+    .then(response => {
+        response.json().then(message => {
+            cb(message)
+        })
+    })
+    .catch(err => {
+        if(err) throw new Error(err)
+    })
+}
+
 export default app;
